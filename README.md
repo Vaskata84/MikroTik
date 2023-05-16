@@ -15,3 +15,18 @@ To fix the error you need to change the names used in the "cipher=" portion. If 
 
 
 /interface ovpn-server server set auth=sha1 certificate="server@$CN" cipher=aes128-cbc,aes192-cbc,aes256-cbc default-profile=VPN-PROFILE mode=ip netmask=24 port="$PORT" enabled=yes require-client-certificate=yes
+
+
+
+openvpn-install.sh
+_________________________________________
+sudo chmod +x openvpn-install.sh
+sudo bash openvpn-install.sh
+sudo systemctl cat openvpn-iptables.service
+sudo more /etc/openvpn/server/server.conf
+sudo systemctl stop openvpn-server@server.service
+sudo systemctl start openvpn-server@server.service
+sudo systemctl restart openvpn-server@server.service
+sudo systemctl status openvpn-server@server.service
+sudo find / -type f -name "iphone.ovpn"
+sudo find / -type f -name "*.ovpn" -ls
