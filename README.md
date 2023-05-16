@@ -12,3 +12,6 @@ default-profile=VPN-PROFILE mode=ip netmask=24 port="$PORT"
 enabled=yes require-client-certificate=yes
 
 To fix the error you need to change the names used in the "cipher=" portion. If you use "aes128-cbc,aes192-cbc,aes256-cbc" then that portion of the script will not throw an error.
+
+
+/interface ovpn-server server set auth=sha1 certificate="server@$CN" cipher=aes128-cbc,aes192-cbc,aes256-cbc default-profile=VPN-PROFILE mode=ip netmask=24 port="$PORT" enabled=yes require-client-certificate=yes
