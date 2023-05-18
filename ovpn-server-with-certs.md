@@ -51,10 +51,10 @@ add dns-server=192.168.252.1 local-address=192.168.252.1 name=VPN-PROFILE \
 
 ## setup OpenVPN server
 /interface ovpn-server server
-set auth=sha1 certificate="server@$CN" cipher=aes128,aes192,aes256 \
+set auth=sha1 certificate="server@$CN" cipher=aes128-cbc,aes192-cbc,aes256-cbc \
   default-profile=VPN-PROFILE mode=ip netmask=24 port="$PORT" \
   enabled=yes require-client-certificate=yes
-
+  
 ## add a firewall rule
 /ip firewall filter
 add chain=input action=accept dst-port="$PORT" protocol=tcp \
