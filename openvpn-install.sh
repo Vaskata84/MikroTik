@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# https://supportpc.org
+# https://supportpc.org Vasil Dobchev
 #
 
 
