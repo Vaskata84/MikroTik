@@ -96,6 +96,12 @@ auth-user-pass /home/test/Downloads/openvpn/user.auth
 
 #so it will ask you for a username and password
 auth-user-pass
+# Uncomment the following line if Internet access is needed
+redirect-gateway def1
+
+# Add routes to networks behind MikroTik
+#route 192.168.88.0 255.255.255.0
+___________________________end file_______________________________
 
 ## permissions
 chmod 600 /home/test/Downloads/openvpn/cert_export_user@supportpc.org.key
