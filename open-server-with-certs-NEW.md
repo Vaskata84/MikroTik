@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Setup OpenVPN Server and Generate Certs</title>
 </head>
 <body>
     <h1>Setup OpenVPN Server and Generate Certs</h1>
