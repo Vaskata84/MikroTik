@@ -64,6 +64,15 @@ resolv-retry infinite
 nobind
 persist-key
 persist-tun
+<ca>
+add here
+</ca>
+<cert>
+add here
+</cert>
+<key>
+add here
+</key>
 ca /home/test/Downloads/openvpn/cert_export_supportpc.org.crt
 cert /home/test/Downloads/openvpn/cert_export_user@supportpc.org.crt
 key /home/test/Downloads/openvpn/cert_export_user@supportpc.org.key
