@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup OpenVPN Server and Generate Certs</title>
 </head>
 <body>
     <h1>Setup OpenVPN Server and Generate Certs</h1>
@@ -101,7 +102,7 @@ redirect-gateway def1
 
 # Add routes to networks behind MikroTik
 #route 192.168.88.0 255.255.255.0
-___________________________end file_______________________________
+##___________________________end file_______________________________
 
 ## permissions
 chmod 600 /home/test/Downloads/openvpn/cert_export_user@supportpc.org.key
