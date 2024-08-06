@@ -65,13 +65,22 @@ nobind
 persist-key
 persist-tun
 <ca>
-add here
+-----BEGIN CERTIFICATE-----
+***Paste CA Cert Text Here***
+ 
+-----END CERTIFICATE-----
 </ca>
 <cert>
-add here
+-----BEGIN CERTIFICATE-----
+***Paste Your Cert Text Here***
+ 
+-----END CERTIFICATE-----
 </cert>
 <key>
-add here
+-----BEGIN PRIVATE KEY-----
+***Paste Your Cert Private Key Here***
+ 
+-----END PRIVATE KEY-----
 </key>
 ca /home/test/Downloads/openvpn/cert_export_supportpc.org.crt
 cert /home/test/Downloads/openvpn/cert_export_user@supportpc.org.crt
