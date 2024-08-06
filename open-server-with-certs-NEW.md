@@ -90,7 +90,12 @@ remote-cert-tls server
 data-ciphers AES-256-GCM:AES-128-GCM:AES-128-CBC
 cipher AES-128-CBC
 verb 5
+
+#so it will read them from the file
 auth-user-pass /home/test/Downloads/openvpn/user.auth
+
+#so it will ask you for a username and password
+auth-user-pass
 
 ## permissions
 chmod 600 /home/test/Downloads/openvpn/cert_export_user@supportpc.org.key
