@@ -50,3 +50,30 @@ add chain=input action=accept dst-port=53 protocol=udp \
   comment="Accept DNS requests from VPN clients" place-before=1
 
 ## Setup completed. Do not forget to create a user.
+
+## Configure complete
+test.ovpn
+#####client
+dev tun
+proto tcp
+remote YOUR_SERVER_IP 1194
+resolv-retry infinite
+nobind
+persist-key
+persist-tun
+ca /home/test/Downloads/openvpn/cert_export_supportpc.org.crt
+cert /home/test/Downloads/openvpn/cert_export_user@supportpc.org.crt
+key /home/test/Downloads/openvpn/cert_export_user@supportpc.org.key.nopass
+remote-cert-tls server
+data-ciphers AES-256-GCM:AES-128-GCM:AES-128-CBC
+cipher AES-128-CBC
+verb 3
+auth-user-pass /home/vasil/Downloads/openvpn/user.auth
+####
+
+chmod 600 /home/test/Downloads/openvpn/cert_export_user@supportpc.org.key.nopass
+chmod 600 /home/test/Downloads/openvpn/user.auth
+
+test connections
+openvpn --config /home/vasil/Downloads/openvpn/test.ovpn
+
