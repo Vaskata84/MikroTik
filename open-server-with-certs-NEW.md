@@ -1,9 +1,13 @@
-# Setup OpenVPN Server and generate certs
-#
-# Change variables below if needed then copy the whole script
-# and paste into MikroTik terminal window.
-#
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>Setup OpenVPN Server and Generate Certs</h1>
+    <p>Change variables below if needed then copy the whole script and paste into MikroTik terminal window.</p>
+    <pre>
 :global CN [/system identity get name]
 :global PORT 1194
 
@@ -49,31 +53,31 @@ add chain=input action=accept dst-port=53 protocol=udp \
   src-address=192.168.252.0/24 \
   comment="Accept DNS requests from VPN clients" place-before=1
 
-## Setup completed. Do not forget to create a user.
+## configure file test.ovpn no password 
+openssl rsa -passin pass:password -in cert_export_user@supportpc.org.key -out cert_export_user@supportpc.org.key
 
-## Configure complete
-test.ovpn
-#####client
+client
 dev tun
 proto tcp
-remote YOUR_SERVER_IP 1194
+remote 10.20.30.40 1194
 resolv-retry infinite
 nobind
 persist-key
 persist-tun
 ca /home/test/Downloads/openvpn/cert_export_supportpc.org.crt
 cert /home/test/Downloads/openvpn/cert_export_user@supportpc.org.crt
-key /home/test/Downloads/openvpn/cert_export_user@supportpc.org.key.nopass
+key /home/test/Downloads/openvpn/cert_export_user@supportpc.org.key
 remote-cert-tls server
 data-ciphers AES-256-GCM:AES-128-GCM:AES-128-CBC
 cipher AES-128-CBC
 verb 3
-auth-user-pass /home/vasil/Downloads/openvpn/user.auth
-####
+auth-user-pass /home/test/Downloads/openvpn/user.auth
 
-chmod 600 /home/test/Downloads/openvpn/cert_export_user@supportpc.org.key.nopass
+## permissions
+chmod 600 /home/test/Downloads/openvpn/cert_export_user@supportpc.org.key
 chmod 600 /home/test/Downloads/openvpn/user.auth
 
-test connections
 openvpn --config /home/vasil/Downloads/openvpn/test.ovpn
-
+    </pre>
+</body>
+</html>
