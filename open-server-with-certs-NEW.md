@@ -83,13 +83,14 @@ persist-tun
  
 -----END PRIVATE KEY-----
 &lt;/key&gt;
+–––––––––––––-or so–––––––––––––––––––––––––––––––––––––
 ca /home/test/Downloads/openvpn/cert_export_supportpc.org.crt
 cert /home/test/Downloads/openvpn/cert_export_user@supportpc.org.crt
 key /home/test/Downloads/openvpn/cert_export_user@supportpc.org.key
 remote-cert-tls server
 data-ciphers AES-256-GCM:AES-128-GCM:AES-128-CBC
 cipher AES-128-CBC
-verb 3
+verb 5
 auth-user-pass /home/test/Downloads/openvpn/user.auth
 
 ## permissions
